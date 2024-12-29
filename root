@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mullen Prestige Cleaning Services - Booking</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Mullen Prestige Cleaning Services</h1>
+    <p>Eco-Friendly Cleaning Solutions Tailored to You</p>
+  </header>
+
+  <main>
+    <section class="booking-form">
+      <h2>Book Your Cleaning Appointment</h2>
+      <form id="bookingForm">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+
+        <label for="services">Select Services:</label>
+        <select id="services" name="services" required>
+          <option value="" disabled selected>Select a service</option>
+          <option value="basic-cleaning">Basic Cleaning</option>
+          <option value="deep-cleaning">Deep Cleaning</option>
+          <option value="post-construction-cleaning">Post-Construction Cleaning</option>
+          <option value="air-purification">Air Purification</option>
+          <option value="covid-aware-cleaning">COVID-Aware Cleaning</option>
+        </select>
+
+        <label for="date">Preferred Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Preferred Time:</label>
+        <input type="time" id="time" name="time" required>
+
+        <label for="message">Additional Details (Optional):</label>
+        <textarea id="message" name="message" placeholder="Provide any special instructions"></textarea>
+
+        <button type="submit">Submit Booking</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2024 Mullen Prestige Cleaning Services. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.header {
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+}
+
+.booking-form {
+  max-width: 600px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.booking-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.booking-form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.booking-form input, .booking-form select, .booking-form textarea, .booking-form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.booking-form button {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+.booking-form button:hover {
+  background-color: #45a049;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+}
+document.getElementById('bookingForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  const services = document.getElementById('services').value;
+  const date = document.getElementById('date').value;
+  const time = document.getElementById('time').value;
+  const message = document.getElementById('message').value;
+
+  // Simulate submission (can be replaced with actual server code)
+  alert(`Thank you, ${name}! Your booking for ${services} on ${date} at ${time} has been received. We will contact you at ${email} or ${phone}.`);
+  document.getElementById('bookingForm').reset();
+});
